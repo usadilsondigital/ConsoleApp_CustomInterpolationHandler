@@ -38,6 +38,8 @@ namespace ConsoleApp_CustomInterpolationHandler
             Console.WriteLine($"\tAppended the formatted object");
         }
 
+        internal string GetFormattedText() => builder.ToString();
+
 
 
     }
