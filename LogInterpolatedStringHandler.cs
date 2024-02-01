@@ -14,6 +14,10 @@ namespace ConsoleApp_CustomInterpolationHandler
         // Storage for the built-up string
         StringBuilder builder;
 
+
+        private readonly bool enabled;
+
+
         public LogInterpolatedStringHandler(int literalLength, int formattedCount)
         {
             builder = new StringBuilder(literalLength);
@@ -39,6 +43,13 @@ namespace ConsoleApp_CustomInterpolationHandler
         }
 
         internal string GetFormattedText() => builder.ToString();
+
+        public LogInterpolatedStringHandler(int literalLength, int formattedCount, Logger logger, LogLevel logLevel)
+        {
+            enabled = logger.EnabledLevel >= logLevel;
+            builder = new StringBuilder(literalLength);
+            Console.WriteLine($"\tliteral length: {literalLength}, formattedCount: {formattedCount}");
+        }
 
 
 
