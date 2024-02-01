@@ -16,6 +16,12 @@ namespace ConsoleApp_CustomInterpolationHandler
             Console.WriteLine(msg);
         }
 
+        public void LogMessage(LogLevel level, LogInterpolatedStringHandler builder)
+        {
+            if (EnabledLevel < level) return;
+            Console.WriteLine(builder.GetFormattedText());
+        }
+
     }
 
 
