@@ -17,4 +17,18 @@ namespace ConsoleApp_CustomInterpolationHandler
         }
 
     }
+
+
+    public enum LogLevel {
+
+        Off,
+        Critical,
+        Error,
+        Warning,
+        Information,
+        Trace
+
+    }
+
+
 }
