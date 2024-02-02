@@ -25,18 +25,20 @@ namespace ConsoleApp_CustomInterpolationHandler
         }
 
 
+
         public void AppendLiteral(string s)
         {
             Console.WriteLine($"\tAppendLiteral called: {{{s}}}");
+            if (!enabled) return;
 
             builder.Append(s);
             Console.WriteLine($"\tAppended the literal string");
         }
 
-
         public void AppendFormatted<T>(T t)
         {
             Console.WriteLine($"\tAppendFormatted called: {{{t}}} is of type {typeof(T)}");
+            if (!enabled) return;
 
             builder.Append(t?.ToString());
             Console.WriteLine($"\tAppended the formatted object");
